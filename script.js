@@ -2,9 +2,11 @@ const ball = document.querySelector('.circle');
 const txt = document.querySelector('p');
 
 ball.addEventListener('click', () => {
-  getRndInteger();
+  const num = document.createElement('div');
+  ball.appendChild(num);
+  num.value = getRndInteger();
   ball.appendChild(txt);
-  if (getRndInteger() === 0) {
+  if (num.value === 0) {
     txt.innerHTML = 'NO';
   } else {
     txt.innerHTML = 'YES';
