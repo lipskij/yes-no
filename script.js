@@ -2,10 +2,12 @@ const ball = document.querySelector('.circle');
 const txt = document.querySelector('p');
 const prevAns = document.querySelector('.prev-ans');
 
+// TODO: add animation
+
 ball.addEventListener('click', () => {
   const num = document.createElement('div');
-  ball.appendChild(num);
   num.value = getRndInteger();
+  ball.appendChild(num);
   ball.appendChild(txt);
   if (num.value === 0) {
     txt.innerHTML = 'NO';
