@@ -2,9 +2,6 @@ const ball = document.querySelector('.circle');
 const txt = document.querySelector('p');
 const prevAns = document.querySelector('.prev-ans');
 
-// TODO: load previous ansers
-// TODO: save/display no more than 3 ansers
-
 ball.addEventListener('click', () => {
   const num = document.createElement('div');
   ball.appendChild(num);
@@ -12,10 +9,13 @@ ball.addEventListener('click', () => {
   ball.appendChild(txt);
   if (num.value === 0) {
     txt.innerHTML = 'NO';
+    ball.removeChild(num);
   } else {
     txt.innerHTML = 'YES';
+    ball.removeChild(num);
   }
   renderItem();
+  limitAnswers();
 });
 
 function getRndInteger() {
@@ -24,10 +24,12 @@ function getRndInteger() {
 
 // render prev answers
 function renderItem() {
-  if (txt.innerHTML === "") {
-    prevAns.innerHTML = "";
-  } else {
     prevAns.innerHTML += ` ${txt.innerHTML},`;
+}
+// limit answers to only 3
+function limitAnswers() {
+  let answers = prevAns.innerHTML;
+  if (answers.length >= 32) {
+    prevAns.innerHTML = "Previous answer:";
   }
 }
-
