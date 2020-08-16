@@ -21,14 +21,19 @@ h1 {
   cursor: pointer;
 }
 
-p {
-  padding-top: 1.5rem;
+.prev-ans {
+  display: flex;
+  margin: 0 1rem;
+  padding-top: 2rem;
   font-size: 2rem;
-  text-align: center;
   color: #452d7e;
 }
 
 .txt {
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #452d7e;
   animation: fade 0.5s linear;
 }
 
@@ -38,5 +43,14 @@ p {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@media screen  and (max-width: 768px) {
+  .prev-ans {
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
   }
 }
