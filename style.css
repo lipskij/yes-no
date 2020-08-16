@@ -21,6 +21,11 @@ h1 {
   cursor: pointer;
 }
 
+.circ-inner:active {
+  transition: transform 0.6s;
+  transform: rotateY(180deg);
+}
+
 .prev-ans {
   display: flex;
   margin: 0 1rem;
