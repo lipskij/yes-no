@@ -1,19 +1,25 @@
-const ball = document.querySelector('.circle');
-const txt = document.querySelector('p');
-const prevAns = document.querySelector('.prev-ans');
+const textDiv = document.querySelector(".msg");
+const ball = document.querySelector(".circle");
+const txt = document.querySelector("p");
+const prevAns = document.querySelector(".prev-ans");
+const btn = document.querySelector(".btn");
 
-ball.addEventListener('click', () => {
-  const num = document.createElement('div');
+ball.addEventListener("click", () => {
+  ball.style = "transform: rotateX(" + rot + "deg)";
+  rot += 360;
+
+  const num = document.createElement("div");
   num.value = getRndInteger();
   ball.appendChild(txt);
 
   if (num.value === 0) {
-    txt.innerHTML = 'NO';
+    txt.innerHTML = "NO";
   } else {
-    txt.innerHTML = 'YES';
+    txt.innerHTML = "YES";
   }
   renderItem();
   limitAnswers();
+  unlucky();
 });
 
 function getRndInteger() {
@@ -28,5 +34,16 @@ function renderItem() {
 function limitAnswers() {
   if (prevAns.innerHTML.length >= 32) {
     return (prevAns.innerHTML = `Previous answer: ${txt.innerHTML}.`);
+  }
+}
+// additional text
+let message = document.createElement("p");
+
+function unlucky() {
+  if (prevAns.innerHTML === "Previous answer: NO. NO. NO.") {
+    message.innerHTML = "Well that is some bad luck :D";
+    textDiv.appendChild(message);
+  } else {
+    message.innerHTML = "";
   }
 }
