@@ -4,6 +4,7 @@ const txt = document.querySelector("p");
 const prevAns = document.querySelector(".prev-ans");
 const btn = document.querySelector(".btn");
 
+let rot = 360;
 ball.addEventListener("click", () => {
   ball.style = "transform: rotateX(" + rot + "deg)";
   rot += 360;

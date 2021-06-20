@@ -36,7 +36,7 @@ h1 {
   font-size: 2rem;
   text-align: center;
   color: #452d7e;
-  animation: fade 0.5s linear;
+  animation: fade 1s ease-in-out;
 }
 
 .msg p {
@@ -48,20 +48,14 @@ h1 {
 }
 
 @keyframes fade {
-  from {
+  0% {
     transform: scale(0);
   }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotateX(0deg);
+  50% {
+    transform: scale(0);
   }
   100% {
-    transform: rotateX(360deg);
+    transform: scale(1);
   }
 }
 
